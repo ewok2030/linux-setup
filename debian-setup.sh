@@ -37,14 +37,6 @@ curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo apt remove libre-office* rhythmbox evolution empathy
 sudo apt autoremove
 
-## install packages
-sudo apt update
-sudo apt install -y build-essential wget curl docker-ce code git nodejs azure-cli golang-go
-
-## docker
-# add the current user to the Docker group, so they dont have to use sudo
-sudo usermod -aG docker ${USER}
-
 ## golang
 #wget -q https://storage.googleapis.com/golang/getgo/installer_linux
 #chmod +x installer_linux 
@@ -52,3 +44,11 @@ sudo usermod -aG docker ${USER}
 ## nodejs
 # assuming script downloaded from above
 sudo bash nodesource_setup.sh
+
+## install packages
+sudo apt update
+sudo apt install -y build-essential wget curl docker-ce code git nodejs azure-cli golang-go
+
+## docker
+# add the current user to the Docker group, so they dont have to use sudo
+sudo usermod -aG docker ${USER}
