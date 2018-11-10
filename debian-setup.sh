@@ -3,6 +3,10 @@
 ## bashrc
 cp ./home/.bashrc ~/.bashrc
 
+## setup apt
+sudo add-apt-repository universe
+sudo apt install -y apt-transport-https
+
 ## vscode
 # https://code.visualstudio.com/docs/setup/linux
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -32,6 +36,10 @@ curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 # Just use the version from Ubuntu repo
 #sudo add-apt-repository ppa:gophers/archive
 
+## kubectl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+
 ## --------------------------------------------------------------------------- ##
 ## remove packages
 sudo apt remove libre-office* rhythmbox evolution empathy
@@ -39,7 +47,17 @@ sudo apt autoremove
 
 ## install packages
 sudo apt update
-sudo apt install -y build-essential wget curl docker-ce code git nodejs azure-cli golang-go
+sudo apt install -y \
+    build-essential \
+    wget \
+    curl \
+    docker-ce \
+    code \
+    git \
+    azure-cli \
+    golang-go \
+    python3-pip \
+    kubectl
 
 ## docker
 # add the current user to the Docker group, so they dont have to use sudo
