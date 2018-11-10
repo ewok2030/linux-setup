@@ -45,6 +45,14 @@ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/a
 sudo apt remove libre-office* rhythmbox evolution empathy
 sudo apt autoremove
 
+## golang
+#wget -q https://storage.googleapis.com/golang/getgo/installer_linux
+#chmod +x installer_linux 
+
+## nodejs
+# assuming script downloaded from above
+sudo bash nodesource_setup.sh
+
 ## install packages
 sudo apt update
 sudo apt install -y \
@@ -62,11 +70,3 @@ sudo apt install -y \
 ## docker
 # add the current user to the Docker group, so they dont have to use sudo
 sudo usermod -aG docker ${USER}
-
-## golang
-#wget -q https://storage.googleapis.com/golang/getgo/installer_linux
-#chmod +x installer_linux 
-
-## nodejs
-# assuming script downloaded from above
-sudo bash nodesource_setup.sh
