@@ -13,6 +13,10 @@ curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microso
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
+## dotnet
+# the gpg key from above should work
+sudo sh -c 'echo ""deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-bionic-prod bionic main" > /etc/apt/sources.list.d/dotnet.list'
+
 ## git
 # using git from the Ubuntu repos
 
@@ -57,6 +61,7 @@ sudo apt install -y \
     curl \
     docker-ce \
     code \
+    dotnet-sdk-2.1 \
     git \
     azure-cli \
     golang-go \
